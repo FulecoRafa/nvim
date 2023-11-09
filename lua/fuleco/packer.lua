@@ -10,6 +10,10 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = { { 'nvim-tree/nvim-web-devicons' } }
+    }
 
     -- Themes
     use({
@@ -27,6 +31,7 @@ return require('packer').startup(function(use)
         -- some optional icons
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     })
+    use 'Shatur/neovim-ayu'
 
     -- Syntax highlight
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -35,6 +40,7 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-treesitter/nvim-treesitter' } }
     }
     use 'nvim-treesitter/nvim-treesitter-context'
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Editor aux
     use 'mbbill/undotree'
@@ -58,6 +64,11 @@ return require('packer').startup(function(use)
                 -- Configuration here, or leave empty to use defaults
             })
         end
+    })
+    use({
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter",
     })
 
     -- LSP

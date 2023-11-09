@@ -1,5 +1,5 @@
 function Coloring(color)
-	color = color or "material-palenight"
+	color = color or "ayu-dark"
 	vim.cmd.colorscheme(color)
 end
 
