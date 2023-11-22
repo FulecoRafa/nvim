@@ -15,6 +15,11 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-tree/nvim-web-devicons' } }
     }
 
+    use {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    }
+
     -- Themes
     use({
         'rose-pine/neovim',
@@ -50,12 +55,7 @@ return require('packer').startup(function(use)
             require('hypersonic').setup()
         end
     }
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
+    use { 'numToStr/Comment.nvim' }
     use({
         "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
