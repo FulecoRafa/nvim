@@ -16,9 +16,9 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_sign_icons({
-    error = "⌦",
-    warn = "⚙︎",
-    hint = "⎋",
+    error = "💢",
+    warn = "⚠️",
+    hint = "ℹ️",
     info = "✍︎"
 })
 
