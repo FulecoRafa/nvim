@@ -41,3 +41,6 @@ vim.opt.colorcolumn = "80"
 vim.opt.foldlevelstart = 25
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- Local configuration file
+vim.o.exrc = true

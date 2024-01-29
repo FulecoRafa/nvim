@@ -20,6 +20,13 @@ return require('packer').startup(function(use)
         dependencies = { "nvim-lua/plenary.nvim" },
     }
 
+    use {
+        "chentoast/marks.nvim",
+        config = function ()
+            require'marks'.setup{}
+        end
+    }
+
     -- Themes
     use({
         'rose-pine/neovim',
@@ -27,6 +34,8 @@ return require('packer').startup(function(use)
     })
     use 'marko-cerovac/material.nvim'
     use 'kyazdani42/nvim-web-devicons'
+    use 'scottmckendry/cyberdream.nvim'
+    use 'sekke276/dark_flat.nvim'
     use({
         "NTBBloodbath/galaxyline.nvim",
         -- your statusline
@@ -37,6 +46,7 @@ return require('packer').startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     })
     use 'Shatur/neovim-ayu'
+    use 'tiagovla/tokyodark.nvim'
 
     -- Syntax highlight
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -124,6 +134,13 @@ return require('packer').startup(function(use)
         },
     }
 
+    -- Markdown
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+    use("ixru/nvim-markdown")
+
     -- Git
     use({
         "kdheepak/lazygit.nvim",
@@ -132,4 +149,16 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim",
         },
     })
+    use {
+        "FabijanZulj/blame.nvim",
+        config = function()
+            require('blame').setup()
+        end,
+    }
+
+    -- Extra
+    use {
+        'glacambre/firenvim',
+        run = function() vim.fn['firenvim#install'](0) end
+    }
 end)
