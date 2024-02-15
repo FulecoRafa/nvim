@@ -34,3 +34,8 @@ vim.keymap.set("n", "<F7>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<F9>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<F8>", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<F10>", "<cmd>lnext<CR>zz")
+
+-- Code helpers
+vim.keymap.set("n", "<leader><leader>e",
+    "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
+)

@@ -28,25 +28,13 @@ return require('packer').startup(function(use)
     }
 
     -- Themes
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-    })
-    use 'marko-cerovac/material.nvim'
     use 'kyazdani42/nvim-web-devicons'
-    use 'scottmckendry/cyberdream.nvim'
-    use 'sekke276/dark_flat.nvim'
-    use({
-        "NTBBloodbath/galaxyline.nvim",
-        -- your statusline
-        config = function()
-            require("galaxyline.themes.eviline")
-        end,
-        -- some optional icons
-        requires = { "kyazdani42/nvim-web-devicons", opt = true }
-    })
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
     use 'Shatur/neovim-ayu'
-    use 'tiagovla/tokyodark.nvim'
+    use "catppuccin/nvim"
 
     -- Syntax highlight
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -108,11 +96,6 @@ return require('packer').startup(function(use)
     use { 'mfussenegger/nvim-jdtls', requires = { "mfussenegger/nvim-dap" } }
     use { 'simrat39/rust-tools.nvim', requires = { "mfussenegger/nvim-dap" } }
     use { 'mxsdev/nvim-dap-vscode-js', requires = { "mfussenegger/nvim-dap" } }
-    use {
-        "microsoft/vscode-js-debug",
-        opt = true,
-        run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-    }
 
 
     -- Rust
