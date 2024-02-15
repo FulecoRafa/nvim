@@ -62,6 +62,12 @@ return require('packer').startup(function(use)
         },
     }
     use 'onsails/lspkind.nvim'
+    use {
+        'm-demare/hlargs.nvim',
+        config = function()
+            require('hlargs').setup()
+        end
+    }
 
 
     -- Editor aux
@@ -212,4 +218,10 @@ return require('packer').startup(function(use)
         'glacambre/firenvim',
         run = function() vim.fn['firenvim#install'](0) end
     }
+    use {
+            "https://git.sr.ht/~nedia/auto-save.nvim",
+            config = function()
+                require("auto-save").setup()
+            end
+        }
 end)
