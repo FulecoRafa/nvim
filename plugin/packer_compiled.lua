@@ -87,7 +87,7 @@ _G.packer_plugins = {
   ["blame.nvim"] = {
     config = { "\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nblame\frequire\0" },
     loaded = true,
-    path = "/home/rafael/.local/share/nvim/site/pack/packer/start/blame.nvim",
+    path = "/Users/fuleco/.local/share/nvim/site/pack/packer/start/blame.nvim",
     url = "https://github.com/FabijanZulj/blame.nvim"
   },
   ["cmp-nvim-lsp"] = {
@@ -100,6 +100,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/fuleco/.local/share/nvim/site/pack/packer/start/crates.nvim",
     url = "https://github.com/saecki/crates.nvim"
+  },
+  firenvim = {
+    loaded = true,
+    path = "/Users/fuleco/.local/share/nvim/site/pack/packer/start/firenvim",
+    url = "https://github.com/glacambre/firenvim"
   },
   ["gopher.nvim"] = {
     loaded = true,
@@ -131,6 +136,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/fuleco/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/Users/fuleco/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["marks.nvim"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\nmarks\frequire\0" },
+    loaded = true,
+    path = "/Users/fuleco/.local/share/nvim/site/pack/packer/start/marks.nvim",
+    url = "https://github.com/chentoast/marks.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -202,7 +218,7 @@ _G.packer_plugins = {
   },
   ["nvim-markdown"] = {
     loaded = true,
-    path = "/home/rafael/.local/share/nvim/site/pack/packer/start/nvim-markdown",
+    path = "/Users/fuleco/.local/share/nvim/site/pack/packer/start/nvim-markdown",
     url = "https://github.com/ixru/nvim-markdown"
   },
   ["nvim-surround"] = {
@@ -268,10 +284,13 @@ _G.packer_plugins = {
     path = "/Users/fuleco/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
   },
-  ["tokyodark.nvim"] = {
-    loaded = true,
-    path = "/home/rafael/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
-    url = "https://github.com/tiagovla/tokyodark.nvim"
+  ["ultimate-autopair.nvim"] = {
+    config = { "\27LJ\2\nÎ\2\0\0\5\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\a\0005\3\3\0005\4\4\0=\4\5\0034\4\0\0=\4\6\3=\3\b\2B\0\2\1K\0\1\0\rfastwarp\1\0\0\tconf\20no_filter_nodes\1\5\0\0\vstring\15raw_string\20string_literals\22character_literal\1\0\r\trmap\n<C-,>\14multiline\2\23do_nothing_if_fail\2\tcmap\n<C-.>\nrcmap\n<C-,>\17nocursormove\2\bmap\n<C-.>\vhopout\1\19enable_reverse\2\18enable_normal\2\venable\2\vfaster\1\nmulti\1\nsetup\22ultimate-autopair\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/fuleco/.local/share/nvim/site/pack/packer/opt/ultimate-autopair.nvim",
+    url = "https://github.com/altermo/ultimate-autopair.nvim"
   },
   undotree = {
     loaded = true,
@@ -281,18 +300,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: marks.nvim
+time([[Config for marks.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\nmarks\frequire\0", "config", "marks.nvim")
+time([[Config for marks.nvim]], false)
 -- Config for: nvim-surround
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
--- Config for: hypersonic.nvim
-time([[Config for hypersonic.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15hypersonic\frequire\0", "config", "hypersonic.nvim")
-time([[Config for hypersonic.nvim]], false)
 -- Config for: crates.nvim
 time([[Config for crates.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
 time([[Config for crates.nvim]], false)
+-- Config for: blame.nvim
+time([[Config for blame.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nblame\frequire\0", "config", "blame.nvim")
+time([[Config for blame.nvim]], false)
+-- Config for: hypersonic.nvim
+time([[Config for hypersonic.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15hypersonic\frequire\0", "config", "hypersonic.nvim")
+time([[Config for hypersonic.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
@@ -310,6 +337,14 @@ pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
       end})
 time([[Defining lazy-load commands]], false)
 
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'ultimate-autopair.nvim'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au CmdlineEnter * ++once lua require("packer.load")({'ultimate-autopair.nvim'}, { event = "CmdlineEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

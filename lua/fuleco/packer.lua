@@ -22,16 +22,16 @@ return require('packer').startup(function(use)
 
     use {
         "chentoast/marks.nvim",
-        config = function ()
-            require'marks'.setup{}
+        config = function()
+            require 'marks'.setup {}
         end
     }
 
     -- Themes
     use 'kyazdani42/nvim-web-devicons'
     use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     use 'Shatur/neovim-ayu'
     use "catppuccin/nvim"
@@ -68,6 +68,46 @@ return require('packer').startup(function(use)
         after = "nvim-treesitter",
         requires = "nvim-treesitter/nvim-treesitter",
     })
+    use {
+        'altermo/ultimate-autopair.nvim',
+        event = { 'InsertEnter', 'CmdlineEnter' },
+        branch = 'v0.6', --recommended as each new version will have breaking changes
+        config = function()
+            require('ultimate-autopair').setup({
+                --Config goes here
+                fastwarp = { -- *ultimate-autopair-map-fastwarp-config*
+                    enable = true,
+                    enable_normal = true,
+                    enable_reverse = true,
+                    hopout = false,
+                    --{(|)} > fastwarp > {(}|)
+                    map = '<C-.>',   --string or table
+                    rmap = '<C-,>',  --string or table
+                    cmap = '<C-.>',  --string or table
+                    rcmap = '<C-,>', --string or table
+                    multiline = true,
+                    --(|) > fastwarp > (\n|)
+                    nocursormove = true,
+                    --makes the cursor not move (|)foo > fastwarp > (|foo)
+                    --disables multiline feature
+                    --only activates if prev char is start pair, otherwise fallback to normal
+                    do_nothing_if_fail = true,
+                    --add a module so that if fastwarp fails
+                    --then an `e` will not be inserted
+                    no_filter_nodes = { 'string', 'raw_string', 'string_literals', 'character_literal' },
+                    --which nodes to skip for tsnode filtering
+                    faster = false,
+                    --only enables jump over pair, goto end/next line
+                    --useful for the situation of:
+                    --{|}M.foo('bar') > {M.foo('bar')|}
+                    conf = {},
+                    --contains extension config
+                    multi = false,
+                    --use multiple configs (|ultimate-autopair-map-multi-config|)
+                },
+            })
+        end
+    }
 
     -- LSP
     use {
