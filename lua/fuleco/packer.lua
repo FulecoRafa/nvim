@@ -212,6 +212,12 @@ return require('packer').startup(function(use)
             require('blame').setup()
         end,
     }
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
 
     -- Extra
     use {
@@ -219,9 +225,9 @@ return require('packer').startup(function(use)
         run = function() vim.fn['firenvim#install'](0) end
     }
     use {
-            "https://git.sr.ht/~nedia/auto-save.nvim",
-            config = function()
-                require("auto-save").setup()
-            end
-        }
+        "https://git.sr.ht/~nedia/auto-save.nvim",
+        config = function()
+            require("auto-save").setup()
+        end
+    }
 end)
