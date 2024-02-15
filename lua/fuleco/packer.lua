@@ -61,6 +61,7 @@ return require('packer').startup(function(use)
             run = ':TSUpdate'
         },
     }
+    use 'onsails/lspkind.nvim'
 
 
     -- Editor aux
