@@ -27,6 +27,7 @@ vim.keymap.set("n", "Q", "<nop>")
 
 -- Autoformat
 vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end)
+vim.keymap.set("v", "<leader>f", function() vim.lsp.buf.format() end)
 
 -- Quickfix navigation
 -- This uses the foward and backward symbols in my keyboard hehe
