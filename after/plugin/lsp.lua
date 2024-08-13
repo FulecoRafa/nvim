@@ -107,3 +107,7 @@ require 'lspconfig'.ltex.setup {
     },
     on_attach = on_attach
 }
+
+require 'lspconfig'.sourcekit.setup{
+    root_dir = require 'lspconfig'.util.root_pattern(".git", "Package.swift", "compile_commands.json")
+}
