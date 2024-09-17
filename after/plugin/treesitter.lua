@@ -1,13 +1,13 @@
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
     ensure_installed = { "c", "lua", "vim", "vimdoc", "query",
-        "typescript", "rust", "go", "python", "java",
-        "dart", "bash", "c_sharp", "cmake", "cpp", "css", "csv",
-        "cuda", "dockerfile", "fish", "git_config", "git_rebase",
+        "typescript", "rust", "go", "python",
+        "bash", "cmake", "cpp", "css", "csv",
+        "dockerfile", "fish", "git_config", "git_rebase",
         "gitcommit", "gitignore", "gomod", "gowork", "graphql",
         "html", "http", "jsdoc", "json", "latex", "make", "markdown",
-        "markdown_inline", "prisma", "regex", "scss", "sql", "svelte",
-        "terraform", "toml", "xml", "yaml", "zig"
+        "markdown_inline", "regex", "sql",
+        "toml", "xml", "yaml", "zig"
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -55,12 +55,12 @@ require 'nvim-treesitter.configs'.setup {
             },
         },
         move = {
-            enable=true,
             goto_next = {
                 ["]a"] = "@parameter.inner",
                 ["]f"] = "@function.outer",
                 ["]]"] = "@block.outer",
             },
+            enable = true,
             goto_previous = {
                 ["[a"] = "@parameter.inner",
                 ["[f"] = "@function.outer",

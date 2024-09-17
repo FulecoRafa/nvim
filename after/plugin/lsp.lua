@@ -59,10 +59,8 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
     ensure_installed = {
-        "arduino_language_server",
         "bashls",
         "clangd",
-        "unocss",
         "dockerls",
         "docker_compose_language_service",
         "eslint",
@@ -70,32 +68,22 @@ require("mason-lspconfig").setup({
         "graphql",
         "html",
         "jsonls",
-        "jdtls", -- Java
         "tsserver",
         "ltex",
         "lua_ls",
         "marksman",             -- Markdown
         "spectral",             -- OpenAPI
-        "prismals",
-        "jedi_language_server", --python
         "rust_analyzer",
         "sqlls",
-        "svelte",
         "taplo",                 -- TOML
-        "terraformls", "tflint", --terraform
         "lemminx",               -- XML
         "yamlls",
     }
 })
 require("mason-nvim-dap").setup({
     ensure_installed = {
-        "python",
         "delve",
-        "node2",
-        "chrome",
         "codelldb",
-        "javadbg",
-        "dart"
     }
 })
 require 'lspconfig'.gopls.setup {}
@@ -108,6 +96,3 @@ require 'lspconfig'.ltex.setup {
     on_attach = on_attach
 }
 
-require 'lspconfig'.sourcekit.setup{
-    root_dir = require 'lspconfig'.util.root_pattern(".git", "Package.swift", "compile_commands.json")
-}

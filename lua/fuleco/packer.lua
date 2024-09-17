@@ -33,18 +33,7 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use 'Shatur/neovim-ayu'
-    use "catppuccin/nvim"
     use 'Mofiqul/dracula.nvim'
-    -- Lua
-    use {
-      "folke/zen-mode.nvim",
-      opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    }
 
     -- Syntax highlight
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -58,7 +47,6 @@ return require('packer').startup(function(use)
         'code-biscuits/nvim-biscuits',
         requires = {
             'nvim-treesitter/nvim-treesitter',
-            run = ':TSUpdate'
         },
     }
     use 'onsails/lspkind.nvim'
@@ -71,7 +59,6 @@ return require('packer').startup(function(use)
 
 
     -- Editor aux
-    use 'mbbill/undotree'
     use {
         'tomiis4/hypersonic.nvim',
         config = function()
@@ -133,15 +120,6 @@ return require('packer').startup(function(use)
             })
         end
     }
-    use({
-        "Pocco81/auto-save.nvim",
-        config = function()
-            require("auto-save").setup {
-                -- your config goes here
-                -- or just leave it empty :)
-            }
-        end,
-    })
 
     -- LSP
     use {
@@ -167,9 +145,7 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-dap'
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
     use { 'leoluz/nvim-dap-go', requires = { "mfussenegger/nvim-dap" } }
-    use { 'mfussenegger/nvim-jdtls', requires = { "mfussenegger/nvim-dap" } }
     use { 'simrat39/rust-tools.nvim', requires = { "mfussenegger/nvim-dap" } }
-    use { 'mxsdev/nvim-dap-vscode-js', requires = { "mfussenegger/nvim-dap" } }
 
 
     -- Rust
@@ -220,10 +196,6 @@ return require('packer').startup(function(use)
     }
 
     -- Extra
-    use {
-        'glacambre/firenvim',
-        run = function() vim.fn['firenvim#install'](0) end
-    }
     use {
         "https://git.sr.ht/~nedia/auto-save.nvim",
         config = function()

@@ -5,6 +5,11 @@ telescope.setup {
         layout_config = {
             prompt_position = 'bottom'
         }
+    },
+    pickers = {
+        find_files = {
+            find_command = { "rg", "--files", "--hidden", "-u" }
+        }
     }
 }
 local builtin = require('telescope.builtin')
