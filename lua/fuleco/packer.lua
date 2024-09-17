@@ -146,6 +146,13 @@ return require('packer').startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
     use { 'leoluz/nvim-dap-go', requires = { "mfussenegger/nvim-dap" } }
     use { 'simrat39/rust-tools.nvim', requires = { "mfussenegger/nvim-dap" } }
+    use {
+        'MysticalDevil/inlay-hints.nvim',
+        requires = { 'neovim/nvim-lspconfig' },
+        config = function ()
+            require'inlay-hints'.setup()
+        end
+    }
 
 
     -- Rust
